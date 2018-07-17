@@ -14,7 +14,7 @@ def hello():
 
 
 @app.route("/test")
-def hello():
+def hello2():
     return "Hello Test!"
 
 # @app.route("/webhook", methods=['POST'])
