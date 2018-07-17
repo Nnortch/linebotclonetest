@@ -12,6 +12,11 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+
+@app.route("/test")
+def hello():
+    return "Hello Test!"
+
 # @app.route("/webhook", methods=['POST'])
 # def webhook():
 #     # get X-Line-Signature header value
