@@ -36,8 +36,13 @@ def webhook():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     #line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ok!"))
-
+    #line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ok!"))
+    if event.message.text=='Get token':
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.reply_token))
+    elif event.message.text=='Get id':
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.source.user_id))
+    else :
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=event.message.text))
 
 if __name__ == "__main__":
     app.run()
